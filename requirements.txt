@@ -1,0 +1,27 @@
+#Core scientific stack
+numpy>=1.24,<2.0
+scipy>=1.10
+pandas>=2.0
+
+#Audio processing & augmentation
+librosa==0.10.2.post1
+soundfile>=0.12          # WAV I/O backend for librosa
+audiomentations==0.43.1
+resampy>=0.4             # resampling backend for librosa
+
+#Models
+scikit-learn>=1.3        # RandomForest baseline + metrics
+tensorflow>=2.13,<2.17   # Keras 2.x CNN, runs on CPU
+
+#Metrics & visualization
+matplotlib>=3.7          # every plot in evaluate.py is plain matplotlib
+
+#Demo
+streamlit>=1.30
+
+#Utilities
+tqdm>=4.65               # progress bars for batch preprocessing
+joblib>=1.3              # serialize the RandomForest (.pkl)
+
+#Tests
+pytest>=8.0

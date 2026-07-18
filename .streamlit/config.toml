@@ -1,0 +1,55 @@
+# Streamlit config for the WINGBEAT demo, set up to run offline. Committed on
+# purpose (only .streamlit/secrets.toml is gitignored).
+
+[theme]
+# "Paper clínico": warm near-white paper, charcoal ink, one scientific teal accent.
+base = "light"
+primaryColor = "#0F766E"              # teal accent (sliders, focus, links)
+backgroundColor = "#FAFAF8"           # page — warm off-white
+secondaryBackgroundColor = "#F1F0EC"  # sidebar / wells / code
+textColor = "#1A1D21"                 # ink
+borderColor = "#E4E2DC"               # hairlines
+baseRadius = "small"                  # crisp, instrument-like corners
+
+# IBM Plex, bundled and served by the app itself (see fontFaces + enableStaticServing)
+# so there's no CDN and it works offline. The fallbacks are system fonts, so if a
+# WOFF2 doesn't load the UI still renders.
+font = "IBM Plex Sans, Segoe UI, system-ui, sans-serif"
+headingFont = "IBM Plex Sans, Segoe UI, system-ui, sans-serif"
+codeFont = "IBM Plex Mono, Consolas, monospace"
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/IBMPlexSans-Regular.woff2"
+weight = "400"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/IBMPlexSans-SemiBold.woff2"
+weight = "600"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "IBM Plex Mono"
+url = "app/static/fonts/IBMPlexMono-Regular.woff2"
+weight = "400"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "IBM Plex Mono"
+url = "app/static/fonts/IBMPlexMono-Medium.woff2"
+weight = "500"
+style = "normal"
+
+[server]
+enableStaticServing = true   # serves demo/static/ under the /app/static/ URL prefix
+headless = true              # don't open a browser / prompt for email on launch
+fileWatcherType = "none"     # no watchdog reruns while the demo is running
+
+[client]
+toolbarMode = "minimal"      # hide the dev chrome (Deploy button, hamburger)
+
+[browser]
+gatherUsageStats = false     # no telemetry, so nothing hangs when offline

@@ -1,0 +1,43 @@
+{
+  "chosen_on": "noisy validation set (val segments + calibration-half CR noise)",
+  "n_val_rows": 14676,
+  "target_recall": 0.9,
+  "models": {
+    "cnn": {
+      "t_f1": 1.7165107e-10,
+      "val_f1_at_t_f1": 0.6668860164512339,
+      "t_recall90": 6.8208497e-09,
+      "val_precision_at_t_recall90": 0.5165019132653061,
+      "val_recall_at_t_recall90": 0.9003613118399111,
+      "target_recall_reached": true,
+      "val_trivial_f1": 0.6580102414045355,
+      "val_edge_over_trivial": 0.008875775046698453,
+      "val_mcc_at_t_f1": 0.13159602213940547,
+      "verdict": "DEGENERATE: recalibrating just pushes it to answer 'aedes' to everything"
+    },
+    "cnn_aug": {
+      "t_f1": 0.27356628,
+      "val_f1_at_t_f1": 0.8920863309352517,
+      "t_recall90": 0.4528066,
+      "val_precision_at_t_recall90": 0.8772856562373019,
+      "val_recall_at_t_recall90": 0.9000833796553641,
+      "target_recall_reached": true,
+      "val_trivial_f1": 0.6580102414045355,
+      "val_edge_over_trivial": 0.23407608953071624,
+      "val_mcc_at_t_f1": 0.7817285057982023,
+      "verdict": "REAL: recalibrating does rescue it"
+    },
+    "baseline": {
+      "t_f1": 0.06,
+      "val_f1_at_t_f1": 0.7751589132024527,
+      "t_recall90": 0.0866666666666666,
+      "val_precision_at_t_recall90": 0.667799052913321,
+      "val_recall_at_t_recall90": 0.901473040578099,
+      "target_recall_reached": true,
+      "val_trivial_f1": 0.6580102414045355,
+      "val_edge_over_trivial": 0.11714867179791721,
+      "val_mcc_at_t_f1": 0.5171892434403522,
+      "verdict": "REAL: recalibrating does rescue it"
+    }
+  }
+}

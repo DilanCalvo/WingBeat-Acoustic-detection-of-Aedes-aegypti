@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+#Virtual environments
+venv/
+.venv/
+env/
+
+#Datasets: not versioned (they can be re-downloaded or regenerated)
+data/raw/
+data/interim/
+data/processed/
+data/hybrid/
+# Noisy validation set (threshold calibration) + noise-augmented training copies.
+data/hybrid_val/
+data/augmented/
+
+#The CR noise recordings ARE versioned
+# We recorded them and they can't be re-downloaded. What's committed is the 8 kHz
+# mono copy (~28 MB), which is what the pipeline consumes. The 48 kHz stereo
+# originals (~333 MB) stay in _raw_48k/ - too heavy for git.
+data/ruido_costarica/_raw_48k/
+
+#Models: versioned on purpose
+
+#Results: versioned, except the scoring cache
+#The tables, metrics JSONs and plots are the deliverable. The per-segment
+#probabilities are just a cache so re-rendering tables doesn't mean re-extracting
+# 24k WAVs, so they aren't committed.
+results/hybrid_predictions.csv
+results/hybrid_predictions.meta.json
+results/val_predictions.csv
+results/val_predictions.meta.json
+
+#Notebooks
+.ipynb_checkpoints/
+
+#Internal working docs: not published
+docs/
+
+#Browser-automation artifacts
+.playwright-cli/
+
+#Streamlit
+.streamlit/secrets.toml
+
+#OS / IDE / local state
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Permissions with absolute paths from this machine: local state, not project state.
+.claude/settings.local.json
