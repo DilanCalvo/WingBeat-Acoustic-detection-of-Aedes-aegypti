@@ -18,11 +18,12 @@ data/hybrid/
 data/hybrid_val/
 data/augmented/
 
-#The CR noise recordings ARE versioned
-# We recorded them and they can't be re-downloaded. What's committed is the 8 kHz
-# mono copy (~28 MB), which is what the pipeline consumes. The 48 kHz stereo
-# originals (~333 MB) stay in _raw_48k/ - too heavy for git.
-data/ruido_costarica/_raw_48k/
+#The CR noise recordings are NOT versioned (removed from the repo and its history).
+# They were team-recorded on location and can't be re-downloaded, so they still
+# have to be kept locally at data/ruido_costarica/ (8 kHz mono + the 48 kHz
+# _raw_48k/ originals) for the noise-degradation pipeline to run. See the note
+# in README.md for where to get them.
+data/ruido_costarica/
 
 #Models: versioned on purpose
 

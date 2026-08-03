@@ -135,8 +135,13 @@ layout the pipeline expects. Run it once after downloading that dataset.
 
 Every *Aedes* positive comes from Wingbeats, so the degradation measured here is
 specific to Wingbeats positives mixed with CR noise. The five noise environments
-(street traffic, kitchen fan, TV room, park, market voices) were recorded by us and
-are versioned in `data/ruido_costarica/`.
+(street traffic, kitchen fan, TV room, park, market voices) were recorded by us,
+but **aren't versioned in this repository** — they were pulled out of the git
+history and are no longer published here. To reproduce the noise-degradation
+pipeline (`build_hybrid_testset.py`, `--augment` training, `calibrate.py`, the
+demo's noise slider) you need your own `data/ruido_costarica/*.wav` (5
+environments × 3 takes, 8 kHz mono, ~2 min each) sitting in that folder locally —
+either your own field recordings or a copy of ours obtained separately.
 
 ## Limitations
 
@@ -160,12 +165,12 @@ tests/                invariant + demo-inference tests
 scripts/              one-off helpers (HumBugDB ingest, demo sample curation)
 models/               committed models (RandomForest + two CNNs)
 results/              degradation table, metrics JSONs, plots
-data/ruido_costarica/ the five Costa Rican noise environments (8 kHz mono)
+data/ruido_costarica/ the five CR noise environments, kept locally only (not versioned, see "Data")
 ```
 
 ## License
 
 Code released under the [MIT License](LICENSE). The datasets listed above are not
 covered by it: each keeps its own upstream license, so check those before reusing the
-data. The Costa Rican noise recordings in `data/ruido_costarica/` are ours and fall
-under the same MIT terms.
+data. The Costa Rican noise recordings are ours; they aren't published in this
+repository, but if you obtain a copy separately they fall under the same MIT terms.
